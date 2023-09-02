@@ -38,7 +38,11 @@
             </div>
         </div>
         @yield('content')
-        copyright
+        <div class="footer">
+            <div class="footer-certificate">
+                <p class="copyright">copyright</p>
+            </div>
+        </div>
     </body>
     </html>
     

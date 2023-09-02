@@ -16,7 +16,7 @@ return new class extends Migration
             $table->timestamps();
             $table->string('brand');
             $table->string('model');
-            $table->integer('cylinders');
+            $table->integer('cylinders')->nullable();
             $table->string('cylinder_type');
             $table->string('description');
             $table->integer('milage');
