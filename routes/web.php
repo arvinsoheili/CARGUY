@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CarsController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
@@ -15,9 +16,18 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return redirect('/home');
 });
+Route::get('/home', [CarsController::class, 'home'])->name('home');
 
+Route::get('/car/sell', [CarsController::class, 'sell'])->name('sell-car');
+Route::post('/car/sell', [CarsController::class, 'store'])->name('post-car');
+
+
+
+
+
+//auth
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
